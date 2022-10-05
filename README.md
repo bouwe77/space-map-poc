@@ -17,3 +17,11 @@
 - Voor spaceship ook textboxes maken, zodat je ook ziet dat middelpunt synced.
 
 - Ook interval maken die spaceship positie verandert.
+
+- Klik op kaart om te locken
+
+- Mouse over toont coordinaat
+
+- Planeten op ware grootte
+
+- Switch naar schematische kaart waar alles even groot is?
