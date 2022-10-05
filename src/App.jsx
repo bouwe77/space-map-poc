@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      <h1>Space Map POC</h1>
+
+      <Map>
+        <Planets />
+        <Spaceships />
+      </Map>
+    </>
   )
 }
+
+const Map = ({ children }) => {
+  return (
+    <svg width="400" height="400" style={{ background: 'black' }}>
+      {children}
+    </svg>
+  )
+}
+
+const Spaceships = () => (
+  <>
+    <Spaceship x={230} y={230} color="red" />
+  </>
+)
+
+const Spaceship = ({ x, y, color }) => (
+  <rect x={x} y={y} fill={color} width="4" height="4" />
+)
+
+const Planets = () => (
+  <>
+    <Planet x={30} y={210} size={8} color="lightgreen" />
+    <Planet x={230} y={50} size={20} color="pink" />
+    <Planet x={170} y={280} size={12} color="lightblue" />
+  </>
+)
+
+const Planet = ({ x, y, size, color }) => (
+  <circle cx={x} cy={y} r={size} stroke-width="4" fill={color} />
+)
 
 export default App
